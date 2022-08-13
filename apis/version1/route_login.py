@@ -20,7 +20,7 @@ def authenticate_user(username: str, password: str, db: Session):
     print(">>>  authenticate_user \n >>> user:", user)
     if not user:
         return False
-    if not Hasher.verify_password(password, user.hashed_password):
+    if not Hasher.verify_password(password, user.PASSWORD):
         return False
     return user
 
@@ -31,14 +31,14 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
     if not user:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Incorrect username or password")
     access_token_expire = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
-    access_token = create_access_token(data={"sub": user.email}, expires_delta=access_token_expire)
+    access_token = create_access_token(data={"sub": user.USERNAME}, expires_delta=access_token_expire)
     return {"access_token": access_token, "token_type": "bearer"}
 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/v1/login/token")
 
 
-def get_curret_user_from_token(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
+def get_curret_user_from_token(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> object:
     credentials_exception = HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Could not validate")
 
     try:

@@ -1,9 +1,9 @@
 from sqlalchemy.orm import Session
 
-from db.models.users import User
+from db.models.users import Users
 
 
 def get_user(username: str, db: Session):
-    user = db.query(User).filter(User.username == username).first()
+    user = db.query(Users).filter(Users.USERNAME == username).first()
     return user
 

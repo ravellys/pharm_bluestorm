@@ -23,11 +23,13 @@ def start_application():
 
 app = start_application()
 
-
-@app.get("/")
-def hello_api():
-    return {"message": "Hello World!"}
-
-
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
+
+
+# TODO:
+# 1. README
+# 2. Testes
+# 3. filtros
+# 4. docker
+# 5. CICD e Deploy

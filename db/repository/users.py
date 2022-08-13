@@ -6,11 +6,8 @@ from core.hashing import Hasher
 
 def create_new_user(user: UserCreate, db: Session):
     user = Users(
-        username=user.username,
-        email=user.email,
-        hashed_password=Hasher.get_password_hash(user.password),
-        is_active=True,
-        is_superuser=False,
+        USERNAME=user.USERNAME,
+        PASSWORD=Hasher.get_password_hash(user.PASSWORD),
     )
     db.add(user)
     db.commit()

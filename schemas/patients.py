@@ -11,3 +11,4 @@ class ShowPatients(BaseModel):
 
     class Config():
         orm_mode = True
+
