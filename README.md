@@ -11,11 +11,12 @@ by the pharmacies.
 - /v1/login/token [POST]: Endpoint where the JWT access token is created;
 
 #### Tools and Frameworks:
-- FastAPI: to build the APIs;
-- Pydantic: ;
-- Jose: ;
-- Pytest: ;
-- Database: sqlite;
+- [FastAPI](https://fastapi.tiangolo.com/): is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints;
+- [Pydantic](https://pydantic-docs.helpmanual.io/): is used to data validation and settings management using python type annotations;
+- [Sqlalquemy](https://www.sqlalchemy.org/): is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL;
+- [JOSE](https://pypi.org/project/jose/):  is a framework intended to provide a method to securely transfer claims (such as authorization information) between parties. The JOSE framework provides a collection of specifications to serve this purpose. A JSON Web Token (JWT) contains claims that can be used to allow a system to apply access control to resources it owns;
+- [Pytest](https://docs.pytest.org/en/7.1.x/):  framework makes it easy to write small, readable tests, and can scale to support complex functional testing for applications and libraries;
+- [Sqlite](https://www.sqlite.org/index.html):  is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.
 
 ## Using the APIs
 
@@ -79,7 +80,13 @@ Here is the list of requirements that you need to configure on your machine to u
     ```shell
     python3 main.py
     ```
-4. Realizar testes:apps/tests/tests_macapa.py
+4. run the testes:
+    ```shell
+    pytest
+    ```
+5. importants links:
+   - Swagger: `http://127.0.0.1:8000/docs`
+   - doc: `http://127.0.0.1:8000/redoc`
 
 ## 🗃 release history
 * 13/08/2022 Project start
