@@ -28,8 +28,5 @@ if __name__ == "__main__":
 
 
 # TODO:
-# 1. README
-# 2. Testes
-# 3. filtros
 # 4. docker
 # 5. CICD e Deploy

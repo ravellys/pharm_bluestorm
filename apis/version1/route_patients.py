@@ -16,9 +16,5 @@ router = APIRouter()
 def retreive_all_patients(
         db: Session = Depends(get_db)
         , current_user: Users = Depends(get_curret_user_from_token)
-        , UUID: Union[str, None] = None
-        , FIRST_NAME: str = None
-        , LAST_NAME: str = None
-        , DATE_OF_BIRTH: str = None
 ):
     return list_patients(db=db)

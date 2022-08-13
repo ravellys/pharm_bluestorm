@@ -30,6 +30,9 @@ by the pharmacies.
 3. Now you are availabe ro requests the APIs:
 ![docs](./readme_images/transactions.png)
 
+- You can also use filters in the API:
+![docs](./readme_images/transaction_with_filters.png)
+
 
 4. You can also call the APIs by following curls commands:
 ```shell

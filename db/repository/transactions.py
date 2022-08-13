@@ -3,7 +3,14 @@ from sqlalchemy.orm import Session
 from schemas.transactions import ShowTransactions
 
 
-def list_transactions(db: Session):
+def query_with_filters(query: str, filters: dict) -> str:
+    for filter, value in filters.items():
+        if value:
+            query += f"and {filter} like '%{value}%'"
+    return query
+
+
+def list_transactions(db: Session, **kwargs):
     keys = ShowTransactions.__fields__.keys()
     query = """
 select T.PATIENT_UUID
@@ -19,7 +26,9 @@ select T.PATIENT_UUID
 from TRANSACTIONS T
          join PATIENTS P on T.PATIENT_UUID = P.UUID
          join PHARMACIES PH on T.PHARMACY_UUID = PH.UUID
+    where true
     """
+    query = query_with_filters(query, kwargs)
     statement = text(query)
 
     with db as con:
