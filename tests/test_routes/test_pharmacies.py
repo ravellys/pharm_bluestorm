@@ -1,7 +1,10 @@
 import requests
-from utils import get_header
+from utils import get_header, URL
+
+PATH = 'v1/patients'
+ENDPOINT = f'{URL}{PATH}'
 
 
 def test_pharmacies():
-    r = requests.get('http://127.0.0.1:8000/v1/pharmacies', headers=get_header())
+    r = requests.get(ENDPOINT, headers=get_header())
     assert r.status_code == 200

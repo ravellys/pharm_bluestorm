@@ -1,5 +1,6 @@
 import requests
 
+URL = 'http://127.0.0.1:8000/'
 USERNAME = 'teste'
 PASSWORD = 'teste'
 
@@ -9,7 +10,7 @@ def get_login_token():
         'username': USERNAME,
         'password': PASSWORD
     }
-    r = requests.post('http://127.0.0.1:8000/v1/login/token', data=body)
+    r = requests.post(f'{URL}v1/login/token', data=body)
     return r.json()
 
 
