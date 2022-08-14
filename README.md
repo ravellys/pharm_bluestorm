@@ -33,7 +33,7 @@ and its documentations can be read at https://pharm-bluestorm.herokuapp.com/redo
 ![docs](./readme_images/transactions.png)
 
 - You can also use filters in the API:
-![docs](./readme_images/transaction_with_filters.png)
+![docs](./readme_images/transaction_filters.gif)
 
 
 4. You can also call the APIs by following curls commands:
