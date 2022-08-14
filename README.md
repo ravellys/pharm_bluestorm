@@ -25,18 +25,19 @@ and its documentations can be read at https://pharm-bluestorm.herokuapp.com/redo
 1. You can access the API via the swagger `https://pharm-bluestorm.herokuapp.com/docs`
 ![docs](./readme_images/docs.png)
 
-2. You need do the login on the Authorize button:
-![docs](./readme_images/login-1.png)
-![docs](./readme_images/login-2.png)
+2. Create your user:
+![docs](./readme_images/create_user.gif)
 
-3. Now you are availabe ro requests the APIs:
+3. You need do the login on the Authorize button:
+![docs](./readme_images/login.gif)
+
+4. Now you are available ro requests the APIs:
 ![docs](./readme_images/transactions.png)
 
-- You can also use filters in the API:
-![docs](./readme_images/transaction_filters.gif)
+   - You can also use filters in the API:
+   ![docs](./readme_images/transaction_filter.gif)
 
-
-4. You can also call the APIs by following curls commands:
+5. You can also call the APIs by following curls commands:
 ```shell
 curl -X 'POST' \
   'https://pharm-bluestorm.herokuapp.com/v1/login/token' \
